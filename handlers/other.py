@@ -3,6 +3,7 @@ import logging
 from aiogram import Router
 from aiogram.types import Message
 from filters.filters import MyTrueFilter
+from handlers.user import user_router
 from lexicon.lexicon import LEXICON_RU
 
 logger = logging.getLogger(__name__)
@@ -18,4 +19,3 @@ async def send_echo(message: Message):
     except TypeError:
         await message.reply(text=LEXICON_RU['no_echo'])
     logger.debug('Выходим из эхо-хэндлера')
-
