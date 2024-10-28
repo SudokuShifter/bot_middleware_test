@@ -1,5 +1,4 @@
 import logging
-from venv import logger
 
 from aiogram.filters import BaseFilter
 from aiogram.types import TelegramObject
@@ -19,4 +18,3 @@ class MyFalseFilter(BaseFilter):
     async def __call__(self, event: TelegramObject) -> bool:
         logger.debug('Попали внутрь фильтра %s', __class__.__name__)
         return False
-

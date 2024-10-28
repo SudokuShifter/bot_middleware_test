@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 user_router = Router()
 
 
-@user_router.message(CommandStart(), MyTrueFilter)
+@user_router.message(CommandStart(), MyTrueFilter())
 async def process_start_command(message: Message):
     logger.debug('Вошли в хэндлер, обрабатывающий команду /start')
     button = InlineKeyboardButton(
